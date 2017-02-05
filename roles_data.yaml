@@ -99,6 +99,7 @@
     - OS::TripleO::Services::Gluon
     - OS::TripleO::Services::Tacker
     - OS::TripleO::Services::Vpp
+    - OS::TripleO::Services::NeutronHoneycombAgent
 
 - name: Compute
   CountDefault: 1
@@ -126,6 +127,7 @@
     - OS::TripleO::Services::FluentdClient
     - OS::TripleO::Services::VipHosts
     - OS::TripleO::Services::Vpp
+    - OS::TripleO::Services::NeutronHoneycombAgent
 
 
 - name: BlockStorage
