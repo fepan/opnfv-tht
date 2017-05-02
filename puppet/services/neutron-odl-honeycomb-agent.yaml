@@ -49,6 +49,12 @@ parameters:
     default: 8081
     description: OpenDaylight service port
     type: number
+  VPPInterfaceRoleMapping:
+    default: []
+    type: comma_delimited_list
+    description: >
+      List of VPP interfaces and their corresponding roles.
+      Example: ['GigabitEthernet2/2/0:tenant-interface','GigabitEthernet2/3/0:public-interface']
 
 outputs:
   role_data:
@@ -65,6 +71,7 @@ outputs:
         fdio::honeycomb::opendaylight_password: {get_param: OpenDaylightPassword}
         fdio::honeycomb::bind_ip: {get_param: [ServiceNetMap, HoneycombNetwork]}
         fdio::honeycomb::node_id: '"%{::fqdn}"'    #NOTE: extra quoting is needed
+        tripleo::profile::base::neutron::agents::honeycomb::interface_role_mapping: {get_param: VPPInterfaceRoleMapping}
         tripleo.neutron_honeycomb_agent.firewall_rules:
           '142 neutron honeycomb agent':
             dport:

@@ -20,6 +20,8 @@ parameter_defaults:
   OpenDaylightEnableL3: "'yes'"
   #Opendaylight Port binding controller
   OpenDaylightPortBindingController: 'pseudo-agentdb-binding'
+  #List of VPP interfaces and their corresponding roles.
+  #VPPInterfaceRoleMapping:['GigabitEthernet2/2/0:tenant-interface','GigabitEthernet2/3/0:public-interface']
   #URI for neutron hostconfig in Opendaylight
   OpenDaylightHostconfURI: 'restconf/operational/neutron:neutron/hostconfigs'
   ExtraConfig:
